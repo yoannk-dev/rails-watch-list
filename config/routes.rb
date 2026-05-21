@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     resources :bookmarks, only: %w[new create]
   end
 
-  delete "bookmarks/:id", to: "bookmarks#destroy", as: :bookmark
+  resources :bookmarks, only: %i[create destroy]
 end

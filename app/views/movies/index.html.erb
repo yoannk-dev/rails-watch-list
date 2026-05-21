@@ -12,9 +12,37 @@
               <i class="fa-solid fa-star"></i>
               <span><%= movie.rating %></span>
             </div>
+            <button type="button" class="btn btn-sm btn-info rounded-pill mt-3 w-100" data-bs-toggle="modal" data-bs-target="#movieModal<%= movie.id %>">
+              Ajouter à une liste
+            </button>
+          </div>
+        </div>
+
+        <div class="modal fade" id="movieModal<%= movie.id %>" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content bg-dark text-white">
+              <div class="modal-header border-secondary">
+                <h5 class="modal-title">Ajouter <%= movie.title %> à une liste</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <%= form_with model: Bookmark.new, url: bookmarks_path do |f| %>
+                  <%= f.hidden_field :movie_id, value: movie.id %>
+                  <div class="mb-3">
+                    <%= f.label :list_id, "Liste", class: "form-label" %>
+                    <%= f.select :list_id, @lists.map { |l| [l.name, l.id] }, { prompt: "Choisir une liste" }, class: "form-select" %>
+                  </div>
+                  <div class="mb-3">
+                    <%= f.label :comment, "Commentaire", class: "form-label" %>
+                    <%= f.text_area :comment, class: "form-control", rows: 3, placeholder: "Minimum 6 caractères..." %>
+                  </div>
+                  <%= f.submit "Ajouter", class: "btn btn-info rounded-pill w-100" %>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
       </li>
     <% end %>
   </ul>
-  </div>
+</div>
