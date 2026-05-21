@@ -1,0 +1,32 @@
+<div class="lists p-4">
+  <h2 class="mb-4">Mes listes</h2>
+  <% if @lists.empty? %>
+    <p>Vous n'avez aucune liste. Commencez !</p>
+  <% end %>
+  <ul class="list-unstyled m-0 p-0 gap-4">
+    <% @lists.each do |list| %>
+      <li>
+        <div class="card rounded-4 overflow-hidden">
+          <%= link_to list_path(list) do %>
+            <% if !list.movies.empty? %>
+              <div class="card-list-img">
+                <img src="<%= list.movies.first.poster_url %>" class="card-img-top" alt="Poster of <%= list.movies.first.title %>">
+              </div>
+            <% end %>
+          <% end %>
+          <div class="card-body">
+            <h6 class="card-title"><%= link_to list.name, list_path(list) %> (<%= list.movies.length %> films)</h6>
+            <%= link_to list_path(list), class: "btn btn-info rounded-pill" do %>
+              <i class="fa-solid fa-eye"></i> Voir
+          <% end %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="border-top mt-4 py-4">
+    <%= link_to new_list_path, class: "btn btn-info rounded-pill" do %>
+      <i class="fa-solid fa-square-plus me-2"></i></i> Ajouter une liste
+    <% end %>
+  </div>

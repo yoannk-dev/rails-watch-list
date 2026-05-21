@@ -3,6 +3,8 @@
     <%= link_to "LetterBox", movies_path %>
   </div>
   <div class="header-actions">
-    <%= link_to "Add a new list", new_list_path, class: "btn btn-info rounded-pill" %>
+    <%= link_to new_list_path, class: "btn btn-info rounded-pill" do %>
+      <i class="fa-solid fa-square-plus me-2"></i></i> Ajouter une liste
+    <% end %>
   </div>
 </div>

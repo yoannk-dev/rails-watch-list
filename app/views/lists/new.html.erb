@@ -1,0 +1,9 @@
+<div class="lists p-4">
+  <h2 class="mb-4">Ajouter une liste</h2>
+
+  <%= render "form", list: @list %>
+
+  <div class="border-top mt-5 py-4">
+    <%= link_to "Mes listes", lists_path, class: "btn btn-outline-info rounded-pill" %>
+  </div>
+</div>
