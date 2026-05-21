@@ -1,0 +1,19 @@
+.sidebar {
+  h6 {
+    letter-spacing: .2rem;
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    margin-left: 15px;
+  }
+
+  a {
+    width: 100%;
+    border-color: transparent;
+    text-align: left !important;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+}

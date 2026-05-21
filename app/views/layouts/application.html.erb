@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-bs-theme="dark">
   <head>
     <title><%= content_for(:title) || "Rails Watch List" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,6 +17,9 @@
     <link rel="icon" href="/icon.png" type="image/png">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -24,6 +27,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/header" %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2 border-end">
+          <%= render "layouts/sidebar" %>
+        </div>
+        <div class="col-10 bg-body-tertiary">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
