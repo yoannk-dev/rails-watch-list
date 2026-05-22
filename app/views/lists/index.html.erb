@@ -8,9 +8,9 @@
       <li>
         <div class="card rounded-4 overflow-hidden">
           <%= link_to list_path(list) do %>
-            <% if !list.movies.empty? %>
+            <% if list.photo.attached? %>
               <div class="card-list-img">
-                <img src="<%= list.movies.first.poster_url %>" class="card-img-top" alt="Poster of <%= list.movies.first.title %>">
+                <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
               </div>
             <% end %>
           <% end %>
