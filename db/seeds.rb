@@ -8,7 +8,7 @@ Movie.destroy_all
 
 puts "Importation des films depuis TMDB (Top Rated)..."
 
-api_token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyZjc5ODMxYzdmODY2ODkyZjlhMjFkNTY1MDgwNWE1YSIsIm5iZiI6MTY0MTkwMTg3OS45Njg5OTk5LCJzdWIiOiI2MWRkNmYzNzA3MjkxYzAwMWNkZTEzOGQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.qswzkcVdI9_0dlXunofMZzoI8VYyk0k6qGON3N6lnow"
+api_token = "xxx"
 
 headers = {
   "Authorization" => "Bearer #{api_token}",
