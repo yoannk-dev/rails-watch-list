@@ -9,6 +9,7 @@ gem "bootstrap", "~> 5.3"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form"
+gem "dotenv-rails"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -64,5 +65,5 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
-gem 'rspec-rails', group: [ :test ]
-gem 'rails-controller-testing', group: [ :test ]
+gem "rspec-rails", group: [ :test ]
+gem "rails-controller-testing", group: [ :test ]
